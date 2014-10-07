@@ -1,0 +1,114 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocios", "Negocios\Negocios.csproj", "{84B44E2E-EF46-4434-A5B9-00366D54DEE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion\Presentacion.csproj", "{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		CD_ROM|Mixed Platforms = CD_ROM|Mixed Platforms
+		CD_ROM|x86 = CD_ROM|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		DVD-5|Any CPU = DVD-5|Any CPU
+		DVD-5|Mixed Platforms = DVD-5|Mixed Platforms
+		DVD-5|x86 = DVD-5|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+		SingleImage|Any CPU = SingleImage|Any CPU
+		SingleImage|Mixed Platforms = SingleImage|Mixed Platforms
+		SingleImage|x86 = SingleImage|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.CD_ROM|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.CD_ROM|Mixed Platforms.Build.0 = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.CD_ROM|x86.ActiveCfg = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.Debug|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.Debug|Mixed Platforms.Build.0 = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.DVD-5|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.DVD-5|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.Release|x86.ActiveCfg = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.SingleImage|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.SingleImage|Mixed Platforms.Build.0 = Release|Any CPU
+		{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}.SingleImage|x86.ActiveCfg = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.CD_ROM|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.CD_ROM|Mixed Platforms.Build.0 = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.CD_ROM|x86.ActiveCfg = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.Debug|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.Debug|Mixed Platforms.Build.0 = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.DVD-5|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.DVD-5|Mixed Platforms.Build.0 = Debug|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.Release|x86.ActiveCfg = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.SingleImage|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.SingleImage|Mixed Platforms.Build.0 = Release|Any CPU
+		{84B44E2E-EF46-4434-A5B9-00366D54DEE9}.SingleImage|x86.ActiveCfg = Release|Any CPU
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.CD_ROM|Any CPU.ActiveCfg = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.CD_ROM|Mixed Platforms.ActiveCfg = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.CD_ROM|Mixed Platforms.Build.0 = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.CD_ROM|x86.ActiveCfg = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.CD_ROM|x86.Build.0 = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.Debug|x86.ActiveCfg = Debug|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.Debug|x86.Build.0 = Debug|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.DVD-5|Any CPU.ActiveCfg = Debug|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.DVD-5|Mixed Platforms.ActiveCfg = Debug|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.DVD-5|Mixed Platforms.Build.0 = Debug|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.DVD-5|x86.ActiveCfg = Debug|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.DVD-5|x86.Build.0 = Debug|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.Release|Any CPU.ActiveCfg = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.Release|Mixed Platforms.Build.0 = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.Release|x86.ActiveCfg = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.Release|x86.Build.0 = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.SingleImage|Any CPU.ActiveCfg = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.SingleImage|Mixed Platforms.ActiveCfg = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.SingleImage|Mixed Platforms.Build.0 = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.SingleImage|x86.ActiveCfg = Release|x86
+		{29FCCB83-FEC5-48CC-96D2-4A2333953B1C}.SingleImage|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.ExceptionHandling.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.ExceptionHandling.Logging.5.0.505.0\lib\NET35
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

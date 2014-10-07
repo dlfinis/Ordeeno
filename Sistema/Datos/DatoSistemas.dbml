@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="sistema" Class="DatoSistemasDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=sistema;Integrated Security=True" SettingsObjectName="Datos.Properties.Settings" SettingsPropertyName="sistemaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TCategoria" Member="TCategoria">
+    <Type Name="TCategoria">
+      <Column Name="cat_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TCategoria_TProducto" Member="TProducto" ThisKey="cat_codigo" OtherKey="cat_codigo" Type="TProducto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCiudad" Member="TCiudad">
+    <Type Name="TCiudad">
+      <Column Name="ciu_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ciu_nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TCiudad_TPersona" Member="TPersona" ThisKey="ciu_codigo" OtherKey="ciu_codigo" Type="TPersona" />
+      <Association Name="TCiudad_TProveedor" Member="TProveedor" ThisKey="ciu_codigo" OtherKey="ciu_codigo" Type="TProveedor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TColor" Member="TColor">
+    <Type Name="TColor">
+      <Column Name="col_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="col_nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TConfiguracion" Member="TConfiguracion">
+    <Type Name="TConfiguracion">
+      <Column Name="conf_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="conf_clave" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="conf_valor" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TDetalle_Pedido" Member="TDetalle_Pedido">
+    <Type Name="TDetalle_Pedido">
+      <Column Name="ped_codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="prod_codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dped_precio" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="TPedido_TDetalle_Pedido" Member="TPedido" ThisKey="ped_codigo" OtherKey="ped_codigo" Type="TPedido" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="TProducto_TDetalle_Pedido" Member="TProducto" ThisKey="prod_codigo" OtherKey="pro_codigo" Type="TProducto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TDetalle_Venta" Member="TDetalle_Venta">
+    <Type Name="TDetalle_Venta">
+      <Column Name="ven_codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="prod_codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dven_precio" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="TProducto_TDetalle_Venta" Member="TProducto" ThisKey="prod_codigo" OtherKey="pro_codigo" Type="TProducto" IsForeignKey="true" />
+      <Association Name="TVenta_TDetalle_Venta" Member="TVenta" ThisKey="ven_codigo" OtherKey="ven_codigo" Type="TVenta" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMarca" Member="TMarca">
+    <Type Name="TMarca">
+      <Column Name="mar_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="mar_nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="prov_codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TMarca_TProducto" Member="TProducto" ThisKey="mar_codigo" OtherKey="mar_codigo" Type="TProducto" />
+      <Association Name="TProveedor_TMarca" Member="TProveedor" ThisKey="prov_codigo" OtherKey="pro_codigo" Type="TProveedor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPedido" Member="TPedido">
+    <Type Name="TPedido">
+      <Column Name="ped_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="prov_codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ped_subtotal12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ped_subtotal0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ped_tiva" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ped_descuento" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ped_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ped_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="TPedido_TDetalle_Pedido" Member="TDetalle_Pedido" ThisKey="ped_codigo" OtherKey="ped_codigo" Type="TDetalle_Pedido" />
+      <Association Name="TProveedor_TPedido" Member="TProveedor" ThisKey="prov_codigo" OtherKey="pro_codigo" Type="TProveedor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPersona" Member="TPersona">
+    <Type Name="TPersona">
+      <Column Name="per_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="per_nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="per_apellido" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="per_direccion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ciu_codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="per_telefono" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="per_celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="per_identificacion" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Association Name="TPersona_TVenta" Member="TVenta" ThisKey="per_codigo" OtherKey="per_codigo" Type="TVenta" />
+      <Association Name="TCiudad_TPersona" Member="TCiudad" ThisKey="ciu_codigo" OtherKey="ciu_codigo" Type="TCiudad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TProducto" Member="TProducto">
+    <Type Name="TProducto">
+      <Column Name="pro_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pro_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="cat_codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="uni_codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pro_descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="pro_compra" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="pro_venta" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="pro_iva" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="pro_stock_min" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pro_stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="mar_codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dcar_codigo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pro_cod_des" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="TProducto_TDetalle_Pedido" Member="TDetalle_Pedido" ThisKey="pro_codigo" OtherKey="prod_codigo" Type="TDetalle_Pedido" />
+      <Association Name="TProducto_TDetalle_Venta" Member="TDetalle_Venta" ThisKey="pro_codigo" OtherKey="prod_codigo" Type="TDetalle_Venta" />
+      <Association Name="TProducto_TProducto_Caracteristica" Member="TProducto_Caracteristica1" ThisKey="pro_codigo" OtherKey="prod_codigo" Type="TProducto_Caracteristica" />
+      <Association Name="TCategoria_TProducto" Member="TCategoria" ThisKey="cat_codigo" OtherKey="cat_codigo" Type="TCategoria" IsForeignKey="true" />
+      <Association Name="TMarca_TProducto" Member="TMarca" ThisKey="mar_codigo" OtherKey="mar_codigo" Type="TMarca" IsForeignKey="true" />
+      <Association Name="TProducto_Caracteristica_TProducto" Member="TProducto_Caracteristica" ThisKey="dcar_codigo" OtherKey="dcar_codigo" Type="TProducto_Caracteristica" IsForeignKey="true" />
+      <Association Name="TUnidad_TProducto" Member="TUnidad" ThisKey="uni_codigo" OtherKey="uni_codigo" Type="TUnidad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TProducto_Caracteristica" Member="TProducto_Caracteristica">
+    <Type Name="TProducto_Caracteristica">
+      <Column Name="dcar_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="prod_codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TProducto_Caracteristica_TProducto" Member="TProducto" ThisKey="dcar_codigo" OtherKey="dcar_codigo" Type="TProducto" />
+      <Association Name="TProducto_Caracteristica_TDetalle_Caracteristica" Member="TDetalle_Caracteristica" ThisKey="dcar_codigo" OtherKey="dcar_codigo" Type="TDetalle_Caracteristica" />
+      <Association Name="TProducto_TProducto_Caracteristica" Member="TProducto1" ThisKey="prod_codigo" OtherKey="pro_codigo" Type="TProducto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TProveedor" Member="TProveedor">
+    <Type Name="TProveedor">
+      <Column Name="pro_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pro_identificacion" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="pro_nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="pro_direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ciu_codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pro_telefono" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="pro_email" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="pro_celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Association Name="TProveedor_TMarca" Member="TMarca" ThisKey="pro_codigo" OtherKey="prov_codigo" Type="TMarca" />
+      <Association Name="TProveedor_TPedido" Member="TPedido" ThisKey="pro_codigo" OtherKey="prov_codigo" Type="TPedido" />
+      <Association Name="TCiudad_TProveedor" Member="TCiudad" ThisKey="ciu_codigo" OtherKey="ciu_codigo" Type="TCiudad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TUnidad" Member="TUnidad">
+    <Type Name="TUnidad">
+      <Column Name="uni_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="uni_nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="uni_prefijo" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Association Name="TUnidad_TProducto" Member="TProducto" ThisKey="uni_codigo" OtherKey="uni_codigo" Type="TProducto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TVenta" Member="TVenta">
+    <Type Name="TVenta">
+      <Column Name="ven_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="per_codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ven_subtotal12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ven_subtotal0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ven_tiva" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ven_descuento" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ven_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ven_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="TVenta_TDetalle_Venta" Member="TDetalle_Venta" ThisKey="ven_codigo" OtherKey="ven_codigo" Type="TDetalle_Venta" />
+      <Association Name="TPersona_TVenta" Member="TPersona" ThisKey="per_codigo" OtherKey="per_codigo" Type="TPersona" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuario">
+    <Type Name="Usuario">
+      <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="usu_password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="usu_activo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="usu_administrador" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="usu_reportes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCaracteristica_Detalle" Member="TCaracteristica_Detalle">
+    <Type Name="TCaracteristica_Detalle">
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPersona_TCiudad" Member="TPersona_TCiudad">
+    <Type Name="TPersona_TCiudad">
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Ciudad" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Identificacion" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TProveedor_TCiudad" Member="TProveedor_TCiudad">
+    <Type Name="TProveedor_TCiudad">
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Ciudad" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Identificacion" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TDetalle_Caracteristica" Member="TDetalle_Caracteristica">
+    <Type Name="TDetalle_Caracteristica">
+      <Column Name="dcar_codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="car_codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="car_valor" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Association Name="TProducto_Caracteristica_TDetalle_Caracteristica" Member="TProducto_Caracteristica" ThisKey="dcar_codigo" OtherKey="dcar_codigo" Type="TProducto_Caracteristica" IsForeignKey="true" />
+      <Association Name="TCaracteristica_TDetalle_Caracteristica" Member="TCaracteristica" ThisKey="car_codigo" OtherKey="car_codigo" Type="TCaracteristica" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCaracteristica" Member="TCaracteristica">
+    <Type Name="TCaracteristica">
+      <Column Name="car_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="car_tipo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TCaracteristica_TDetalle_Caracteristica" Member="TDetalle_Caracteristica" ThisKey="car_codigo" OtherKey="car_codigo" Type="TDetalle_Caracteristica" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TDetalleProducto_Caracteristica" Member="TDetalleProducto_Caracteristica">
+    <Type Name="TDetalleProducto_Caracteristica">
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodProd" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodDCar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodCar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Valor" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMarca_Foreign" Member="TMarca_Foreign">
+    <Type Name="TMarca_Foreign">
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTamanio" Member="TTamanio">
+    <Type Name="TTamanio">
+      <Column Name="dim_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dim_nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TVenta_Foreign" Member="TVenta_Foreign">
+    <Type Name="TVenta_Foreign">
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="IdComprador" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="Comprador" Type="System.String" DbType="VarChar(201) NOT NULL" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="TotalIVA" Type="System.Double" DbType="Float" CanBeNull="true" UpdateCheck="Always" />
+      <Column Name="TotalDescuento" Type="System.Double" DbType="Float" CanBeNull="true" UpdateCheck="Always" />
+      <Column Name="TotalBase" Type="System.Double" DbType="Float" CanBeNull="true" UpdateCheck="Always" />
+      <Column Name="TotalBaseIVA" Type="System.Double" DbType="Float" CanBeNull="true" UpdateCheck="Always" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" UpdateCheck="Always" />
+      <Column Name="Fecha" AutoSync="Never" Type="System.DateTime" DbType="Date" CanBeNull="true" UpdateCheck="Always" IsVersion="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" UpdateCheck="Always" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TDetalle_Venta_Foreign" Member="TDetalle_Venta_Foreign">
+    <Type Name="TDetalle_Venta_Foreign">
+      <Column Name="VentaCod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductoCod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Identificacion" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Comprador" Type="System.String" DbType="VarChar(201) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CodProd" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ProductoNom" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Unidad" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Marca" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Precio" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="SubTotal" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TDetalle_Pedido_Foreign" Member="TDetalle_Pedido_Foreign">
+    <Type Name="TDetalle_Pedido_Foreign">
+      <Column Name="PedidoCod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductoCod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Identificacion" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Vendedor" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CodProd" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ProductoNom" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Unidad" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Marca" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Precio" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="SubTotal" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPedido_Foreign" Member="TPedido_Foreign">
+    <Type Name="TPedido_Foreign">
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdVendedor" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Vendedor" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalIVA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalDescuento" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalBase" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalBaseIVA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TDetalle_Pedido_Producto" Member="TDetalle_Pedido_Producto">
+    <Type Name="TDetalle_Pedido_Producto">
+      <Column Name="CodVen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodProd" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Pedido" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="IVA" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TDetalle_Venta_Producto" Member="TDetalle_Venta_Producto">
+    <Type Name="TDetalle_Venta_Producto">
+      <Column Name="CodVen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodProd" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Venta" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="IVA" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPedido_Analisis" Member="TPedido_Analisis">
+    <Type Name="TPedido_Analisis">
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TVenta_Analisis" Member="TVenta_Analisis">
+    <Type Name="TVenta_Analisis">
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TProducto_Foreign" Member="TProducto_Foreign">
+    <Type Name="TProducto_Foreign">
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodProd" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IVA" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="StockMin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Compra" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Venta" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="VentaConIVA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Unidad" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Marca" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="CodDcar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TProducto_Caracteristica_Foreign" Member="TProducto_Caracteristica_Foreign">
+    <Type Name="TProducto_Caracteristica_Foreign">
+      <Column Name="Codigo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodProd" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="IVA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="StockMin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Compra" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Venta" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VentaConIVA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Unidad" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Marca" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="CodDcar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_car_delete" Method="sp_car_delete">
+    <Parameter Name="car_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_car_edit" Method="sp_car_edit">
+    <Parameter Name="car_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="car_tipo" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_car_insert" Method="sp_car_insert">
+    <Parameter Name="car_tipo" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_cat_delete" Method="sp_cat_delete">
+    <Parameter Name="cat_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_cat_edit" Method="sp_cat_edit">
+    <Parameter Name="cat_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cat_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_cat_insert" Method="sp_cat_insert">
+    <Parameter Name="cat_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ciu_delete" Method="sp_ciu_delete">
+    <Parameter Name="ciu_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ciu_edit" Method="sp_ciu_edit">
+    <Parameter Name="ciu_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ciu_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ciu_insert" Method="sp_ciu_insert">
+    <Parameter Name="ciu_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_col_delete" Method="sp_col_delete">
+    <Parameter Name="col_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_col_edit" Method="sp_col_edit">
+    <Parameter Name="col_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="col_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_col_insert" Method="sp_col_insert">
+    <Parameter Name="col_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_conf_edit" Method="sp_conf_edit">
+    <Parameter Name="con_clave" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="con_valor" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_det_pedido_delete" Method="sp_det_pedido_delete">
+    <Parameter Name="ped_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prod_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_det_venta_delete" Method="sp_det_venta_delete">
+    <Parameter Name="ven_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prod_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_det_venta_insert" Method="sp_det_venta_insert">
+    <Parameter Name="ven_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prod_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dven_precio" Type="System.Double" DbType="Float" />
+    <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dven_descuento" Type="System.Double" DbType="Float" />
+    <Parameter Name="dven_aumento" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_dim_delete" Method="sp_dim_delete">
+    <Parameter Name="dim_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_dim_edit" Method="sp_dim_edit">
+    <Parameter Name="dim_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dim_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_dim_insert" Method="sp_dim_insert">
+    <Parameter Name="dim_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_mar_delete" Method="sp_mar_delete">
+    <Parameter Name="mar_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_per_delete" Method="sp_per_delete">
+    <Parameter Name="per_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_prod_delete" Method="sp_prod_delete">
+    <Parameter Name="prod_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_prov_delete" Method="sp_prov_delete">
+    <Parameter Name="prov_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_reset_identity" Method="sp_reset_identity">
+    <Parameter Name="tabla" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="numeroprevio" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_uni_delete" Method="sp_uni_delete">
+    <Parameter Name="uni_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_uni_edit" Method="sp_uni_edit">
+    <Parameter Name="uni_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="uni_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="uni_prefijo" Type="System.String" DbType="Char(3)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_uni_insert" Method="sp_uni_insert">
+    <Parameter Name="uni_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="uni_prefijo" Type="System.String" DbType="Char(3)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_upd_tdetalle_venta" Method="sp_upd_tdetalle_venta">
+    <Parameter Name="precio" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ven_delete" Method="sp_ven_delete">
+    <Parameter Name="ven_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_det_venta_edit" Method="sp_det_venta_edit">
+    <Parameter Name="ven_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prod_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dven_precio" Type="System.Double" DbType="Float" />
+    <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dven_descuento" Type="System.Double" DbType="Float" />
+    <Parameter Name="dven_aumento" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ped_delete" Method="sp_ped_delete">
+    <Parameter Name="ped_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_det_pedido_insert" Method="sp_det_pedido_insert">
+    <Parameter Name="ped_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prod_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dped_precio" Type="System.Double" DbType="Float" />
+    <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_det_pedido_edit" Method="sp_det_pedido_edit">
+    <Parameter Name="ped_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prod_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dped_precio" Type="System.Double" DbType="Float" />
+    <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_mar_insert" Method="sp_mar_insert">
+    <Parameter Name="mar_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_mar_edit" Method="sp_mar_edit">
+    <Parameter Name="mar_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="mar_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_pcar_insert" Method="sp_pcar_insert">
+    <Parameter Name="prod_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_pcar_delete" Method="sp_pcar_delete">
+    <Parameter Name="dcar_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_pcar_edit" Method="sp_pcar_edit">
+    <Parameter Name="dcar_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prod_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_dcar_edit" Method="sp_dcar_edit">
+    <Parameter Name="dcar_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="car_tipo" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="car_valor" Type="System.String" DbType="VarChar(300)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_dcar_insert" Method="sp_dcar_insert">
+    <Parameter Name="dcar_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="car_tipo" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="car_valor" Type="System.String" DbType="VarChar(300)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_dcar_delete" Method="sp_dcar_delete">
+    <Parameter Name="dcar_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="car_tipo" Type="System.String" DbType="VarChar(300)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_dcar_delete_complete" Method="sp_dcar_delete_complete">
+    <Parameter Name="dcar_codigo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.fn_prod_analisis_prd" Method="fn_prod_analisis_prd" IsComposable="true">
+    <Parameter Name="fechA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fechaB" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="vn" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="codprod" Type="System.Int32" DbType="Int" />
+    <ElementType Name="fn_prod_analisis_prdResult">
+      <Column Name="MontoVentas" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MontoCompras" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UtilidadBruta" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UtilidadNeta" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.fn_prod_analisis" Method="fn_prod_analisis" IsComposable="true">
+    <Parameter Name="fechA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fechaB" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="vn" Type="System.Char" DbType="Char(1)" />
+    <ElementType Name="fn_prod_analisisResult">
+      <Column Name="MontoVentas" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MontoCompras" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UtilidadBruta" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UtilidadNeta" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_prod_edit" Method="sp_prod_edit">
+    <Parameter Name="prod_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prod_codprod" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prod_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="cat_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="mar_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="uni_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="dcar_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prod_descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prod_compra" Type="System.Double" DbType="Float" />
+    <Parameter Name="prod_venta" Type="System.Double" DbType="Float" />
+    <Parameter Name="prod_iva" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="prod_stock_min" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prod_stock" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_prod_insert" Method="sp_prod_insert">
+    <Parameter Name="prod_codprod" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prod_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="cat_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="mar_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="uni_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="dcar_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prod_descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prod_compra" Type="System.Double" DbType="Float" />
+    <Parameter Name="prod_venta" Type="System.Double" DbType="Float" />
+    <Parameter Name="prod_iva" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="prod_stock_min" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prod_stock" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_per_edit" Method="sp_per_edit">
+    <Parameter Name="per_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="per_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="per_apellido" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="per_direccion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ciu_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="per_telefono" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="per_celular" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="per_identificacion" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_per_insert" Method="sp_per_insert">
+    <Parameter Name="per_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="per_apellido" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="per_direccion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ciu_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="per_telefono" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="per_celular" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="per_identificacion" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_prov_insert" Method="sp_prov_insert">
+    <Parameter Name="prov_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prov_direccion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ciu_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prov_telefono" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prov_celular" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prov_email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prov_identificacion" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_prov_edit" Method="sp_prov_edit">
+    <Parameter Name="prov_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prov_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prov_direccion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ciu_nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prov_telefono" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prov_celular" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prov_email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prov_identificacion" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ven_insert" Method="sp_ven_insert">
+    <Parameter Name="per_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="estado" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="ven_descuento" Type="System.Double" DbType="Float" />
+    <Parameter Name="ven_date" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ven_edit" Method="sp_ven_edit">
+    <Parameter Name="ven_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="per_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="estado" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="descuento" Type="System.Double" DbType="Float" />
+    <Parameter Name="ven_date" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ped_insert" Method="sp_ped_insert">
+    <Parameter Name="prov_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="estado" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="ped_descuento" Type="System.Double" DbType="Float" />
+    <Parameter Name="ped_date" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ped_edit" Method="sp_ped_edit">
+    <Parameter Name="ped_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prov_codigo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="estado" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="descuento" Type="System.Double" DbType="Float" />
+    <Parameter Name="ped_fecha" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

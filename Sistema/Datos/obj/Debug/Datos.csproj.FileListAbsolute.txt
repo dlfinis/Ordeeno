@@ -1,0 +1,5 @@
+C:\SisElectro\WinFact\Datos\bin\Debug\Datos.dll.config
+C:\SisElectro\WinFact\Datos\bin\Debug\Datos.dll
+C:\SisElectro\WinFact\Datos\bin\Debug\Datos.pdb
+C:\SisElectro\WinFact\Datos\obj\Debug\Datos.dll
+C:\SisElectro\WinFact\Datos\obj\Debug\Datos.pdb

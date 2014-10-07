@@ -1,0 +1,11 @@
+C:\SisElectro\WinFact\Datos\bin\Release\Datos.dll.config
+C:\SisElectro\WinFact\Datos\bin\Release\Datos.dll
+C:\SisElectro\WinFact\Datos\bin\Release\Datos.pdb
+C:\SisElectro\WinFact\Datos\obj\Release\Datos.dll
+C:\SisElectro\WinFact\Datos\obj\Release\Datos.pdb
+C:\SisElectro\Sistema\Datos\bin\Release\Datos.dll.config
+C:\SisElectro\Sistema\Datos\bin\Release\Datos.dll
+C:\SisElectro\Sistema\Datos\bin\Release\Datos.pdb
+C:\SisElectro\Sistema\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+C:\SisElectro\Sistema\Datos\obj\Release\Datos.dll
+C:\SisElectro\Sistema\Datos\obj\Release\Datos.pdb

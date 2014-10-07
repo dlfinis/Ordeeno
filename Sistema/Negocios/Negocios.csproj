@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{84B44E2E-EF46-4434-A5B9-00366D54DEE9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Negocios</RootNamespace>
+    <AssemblyName>Negocios</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Componente\BigCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\BotonFormulario.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\BotonFormulario.Designer.cs">
+      <DependentUpon>BotonFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componente\DataGridViewListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\DataGridViewListBox.Designer.cs">
+      <DependentUpon>DataGridViewListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componente\DevNumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\DevNumericTextBox.Designer.cs">
+      <DependentUpon>DevNumericTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componente\DevStringTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\DevStringTextBox.Designer.cs">
+      <DependentUpon>DevStringTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componente\DevStringWTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\DevStringWTextBox.Designer.cs">
+      <DependentUpon>DevStringWTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componente\ListBoxDgv.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\ListBoxDgv.Designer.cs">
+      <DependentUpon>ListBoxDgv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componente\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\NumericTextBox.Designer.cs">
+      <DependentUpon>NumericTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componente\StringTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\StringTextBox.Designer.cs">
+      <DependentUpon>StringTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ENBusqueda.cs" />
+    <Compile Include="Entidades\ECaracteristica.cs" />
+    <Compile Include="Entidades\EColor.cs" />
+    <Compile Include="Entidades\EConfiguracion.cs" />
+    <Compile Include="Entidades\EDetallePedido.cs" />
+    <Compile Include="Entidades\EDetalleCaracteristica.cs" />
+    <Compile Include="Entidades\EProductoCaracteristica.cs" />
+    <Compile Include="Entidades\EVenta.cs" />
+    <Compile Include="Entidades\ETamanio.cs" />
+    <Compile Include="Entidades\EPedido.cs" />
+    <Compile Include="Entidades\EProducto.cs" />
+    <Compile Include="Entidades\EProveedor.cs" />
+    <Compile Include="Entidades\EUnidad.cs" />
+    <Compile Include="Entidades\EDetalleVenta.cs" />
+    <Compile Include="Forma\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forma\FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NBaseDatos.cs" />
+    <Compile Include="NCaracteristica.cs" />
+    <Compile Include="NColor.cs" />
+    <Compile Include="NConfiguracion.cs" />
+    <Compile Include="NDetalleCaracteristica.cs" />
+    <Compile Include="NDetallePedido.cs" />
+    <Compile Include="NDetalleVenta.cs" />
+    <Compile Include="NTamanio.cs" />
+    <Compile Include="NPedido.cs" />
+    <Compile Include="NPersona.cs" />
+    <Compile Include="Entidades\EPersona.cs" />
+    <Compile Include="Entidades\ECategoria.cs" />
+    <Compile Include="NCategoria.cs" />
+    <Compile Include="Entidades\ECiudad.cs" />
+    <Compile Include="Entidades\EMarca.cs" />
+    <Compile Include="NCiudad.cs" />
+    <Compile Include="NMarca.cs" />
+    <Compile Include="NProducto.cs" />
+    <Compile Include="NProducto_Caracteristica.cs" />
+    <Compile Include="NProveedor.cs" />
+    <Compile Include="NUnidad.cs" />
+    <Compile Include="NVenta.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{D8DF9DBC-8CD3-4301-9D75-42F4226915A8}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forma\FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

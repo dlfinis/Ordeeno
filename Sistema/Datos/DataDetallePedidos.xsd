@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataDetallePedidos" targetNamespace="http://tempuri.org/DataDetallePedidos.xsd" xmlns:mstns="http://tempuri.org/DataDetallePedidos.xsd" xmlns="http://tempuri.org/DataDetallePedidos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="sistemaConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sistemaConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Datos.Properties.Settings.GlobalReference.Default.sistemaConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="sistemaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sistemaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Datos.Properties.Settings.GlobalReference.Default.sistemaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TDetalle_Pedido_ForeignTableAdapter" GeneratorDataComponentClassName="TDetalle_Pedido_ForeignTableAdapter" Name="TDetalle_Pedido_Foreign" UserDataComponentName="TDetalle_Pedido_ForeignTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sistemaConnectionString1 (Settings)" DbObjectName="sistema.dbo.TDetalle_Pedido_Foreign" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT     PedidoCod, ProductoCod, Identificacion, Fecha, Estado, CodProd, ProductoNom, Descripcion, Categoria, Unidad, Marca, cantidad, Precio, SubTotal
+FROM         TDetalle_Pedido_Foreign</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ProductoCod" DataSetColumn="ProductoCod" />
+              <Mapping SourceColumn="Identificacion" DataSetColumn="Identificacion" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="CodProd" DataSetColumn="CodProd" />
+              <Mapping SourceColumn="ProductoNom" DataSetColumn="ProductoNom" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Categoria" DataSetColumn="Categoria" />
+              <Mapping SourceColumn="Unidad" DataSetColumn="Unidad" />
+              <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
+              <Mapping SourceColumn="cantidad" DataSetColumn="cantidad" />
+              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+              <Mapping SourceColumn="SubTotal" DataSetColumn="SubTotal" />
+              <Mapping SourceColumn="PedidoCod" DataSetColumn="PedidoCod" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="sistemaConnectionString1 (Settings)" DbObjectName="sistema.dbo.TDetalle_Venta_Foreign" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByPedidoCod" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillByPedidoCod" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByPedidoCod">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT     PedidoCod, ProductoCod, Identificacion, Fecha, Estado, CodProd, ProductoNom, Descripcion, Categoria, Unidad, Marca, cantidad, Precio, SubTotal
+FROM         TDetalle_Pedido_Foreign
+WHERE     (PedidoCod = @pedcodigo) AND (ProductoCod = @prodcodigo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="pedcodigo" ColumnName="PedidoCod" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@pedcodigo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="PedidoCod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="prodcodigo" ColumnName="ProductoCod" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@prodcodigo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ProductoCod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="sistemaConnectionString1 (Settings)" DbObjectName="sistema.dbo.TDetalle_Venta_Foreign" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByPedidoCod1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByPedidoCod1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByPedidoCod1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT     PedidoCod, ProductoCod, Identificacion, Fecha, Estado, CodProd, ProductoNom, Descripcion, Categoria, Unidad, Marca, cantidad, Precio, SubTotal
+FROM         TDetalle_Pedido_Foreign
+WHERE     (PedidoCod = @pedcodigo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="pedcodigo" ColumnName="PedidoCod" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@pedcodigo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="PedidoCod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TPedido_ForeignTableAdapter" GeneratorDataComponentClassName="TPedido_ForeignTableAdapter" Name="TPedido_Foreign" UserDataComponentName="TPedido_ForeignTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sistemaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByCodigo" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataByCodigo" GeneratorSourceName="FillByCodigo" GetMethodModifier="Public" GetMethodName="GetDataByCodigo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByCodigo" UserSourceName="FillByCodigo">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT     TPedido_Foreign.Codigo, TPedido_Foreign.IdVendedor, TPedido_Foreign.Vendedor, TPedido.ped_subtotal0 AS SubTotal0, TPedido.ped_subtotal12 AS SubTotal12, 
+                      TPedido.ped_tiva AS SubTotalIVA, TPedido.ped_descuento AS Descuento, TPedido_Foreign.Total, TPedido_Foreign.Fecha, TPedido_Foreign.Estado
+FROM         TPedido_Foreign INNER JOIN
+                      TPedido ON TPedido_Foreign.Codigo = TPedido.ped_codigo
+WHERE     (TPedido_Foreign.Codigo = @valor)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="valor" ColumnName="Codigo" DataSourceName="sistema.dbo.TPedido_Foreign" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@valor" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Codigo" DataSetColumn="Codigo" />
+              <Mapping SourceColumn="IdVendedor" DataSetColumn="IdVendedor" />
+              <Mapping SourceColumn="Vendedor" DataSetColumn="Vendedor" />
+              <Mapping SourceColumn="SubTotal0" DataSetColumn="SubTotal0" />
+              <Mapping SourceColumn="SubTotal12" DataSetColumn="SubTotal12" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataDetallePedidos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataDetallePedidos" msprop:Generator_UserDSName="DataDetallePedidos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TDetalle_Pedido_Foreign" msprop:Generator_TableClassName="TDetalle_Pedido_ForeignDataTable" msprop:Generator_TableVarName="tableTDetalle_Pedido_Foreign" msprop:Generator_RowChangedName="TDetalle_Pedido_ForeignRowChanged" msprop:Generator_TablePropName="TDetalle_Pedido_Foreign" msprop:Generator_RowDeletingName="TDetalle_Pedido_ForeignRowDeleting" msprop:Generator_RowChangingName="TDetalle_Pedido_ForeignRowChanging" msprop:Generator_RowEvHandlerName="TDetalle_Pedido_ForeignRowChangeEventHandler" msprop:Generator_RowDeletedName="TDetalle_Pedido_ForeignRowDeleted" msprop:Generator_RowClassName="TDetalle_Pedido_ForeignRow" msprop:Generator_UserTableName="TDetalle_Pedido_Foreign" msprop:Generator_RowEvArgName="TDetalle_Pedido_ForeignRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProductoCod" msprop:Generator_ColumnVarNameInTable="columnProductoCod" msprop:Generator_ColumnPropNameInRow="ProductoCod" msprop:Generator_ColumnPropNameInTable="ProductoCodColumn" msprop:Generator_UserColumnName="ProductoCod" type="xs:int" />
+              <xs:element name="Identificacion" msprop:Generator_ColumnVarNameInTable="columnIdentificacion" msprop:Generator_ColumnPropNameInRow="Identificacion" msprop:Generator_ColumnPropNameInTable="IdentificacionColumn" msprop:Generator_UserColumnName="Identificacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Estado" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodProd" msprop:Generator_ColumnVarNameInTable="columnCodProd" msprop:Generator_ColumnPropNameInRow="CodProd" msprop:Generator_ColumnPropNameInTable="CodProdColumn" msprop:Generator_UserColumnName="CodProd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProductoNom" msprop:Generator_ColumnVarNameInTable="columnProductoNom" msprop:Generator_ColumnPropNameInRow="ProductoNom" msprop:Generator_ColumnPropNameInTable="ProductoNomColumn" msprop:Generator_UserColumnName="ProductoNom" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_UserColumnName="Categoria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Unidad" msprop:Generator_ColumnVarNameInTable="columnUnidad" msprop:Generator_ColumnPropNameInRow="Unidad" msprop:Generator_ColumnPropNameInTable="UnidadColumn" msprop:Generator_UserColumnName="Unidad">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:int" />
+              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:double" />
+              <xs:element name="SubTotal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSubTotal" msprop:Generator_ColumnPropNameInRow="SubTotal" msprop:Generator_ColumnPropNameInTable="SubTotalColumn" msprop:Generator_UserColumnName="SubTotal" type="xs:double" minOccurs="0" />
+              <xs:element name="PedidoCod" msprop:Generator_ColumnVarNameInTable="columnPedidoCod" msprop:Generator_ColumnPropNameInRow="PedidoCod" msprop:Generator_ColumnPropNameInTable="PedidoCodColumn" msprop:Generator_UserColumnName="PedidoCod" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TPedido_Foreign" msprop:Generator_TableClassName="TPedido_ForeignDataTable" msprop:Generator_TableVarName="tableTPedido_Foreign" msprop:Generator_RowChangedName="TPedido_ForeignRowChanged" msprop:Generator_TablePropName="TPedido_Foreign" msprop:Generator_RowDeletingName="TPedido_ForeignRowDeleting" msprop:Generator_RowChangingName="TPedido_ForeignRowChanging" msprop:Generator_RowEvHandlerName="TPedido_ForeignRowChangeEventHandler" msprop:Generator_RowDeletedName="TPedido_ForeignRowDeleted" msprop:Generator_RowClassName="TPedido_ForeignRow" msprop:Generator_UserTableName="TPedido_Foreign" msprop:Generator_RowEvArgName="TPedido_ForeignRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:int" />
+              <xs:element name="IdVendedor" msprop:Generator_ColumnVarNameInTable="columnIdVendedor" msprop:Generator_ColumnPropNameInRow="IdVendedor" msprop:Generator_ColumnPropNameInTable="IdVendedorColumn" msprop:Generator_UserColumnName="IdVendedor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Vendedor" msprop:Generator_ColumnVarNameInTable="columnVendedor" msprop:Generator_ColumnPropNameInRow="Vendedor" msprop:Generator_ColumnPropNameInTable="VendedorColumn" msprop:Generator_UserColumnName="Vendedor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubTotal0" msprop:Generator_ColumnVarNameInTable="columnSubTotal0" msprop:Generator_ColumnPropNameInRow="SubTotal0" msprop:Generator_ColumnPropNameInTable="SubTotal0Column" msprop:Generator_UserColumnName="SubTotal0" type="xs:double" minOccurs="0" />
+              <xs:element name="SubTotal12" msprop:Generator_ColumnVarNameInTable="columnSubTotal12" msprop:Generator_ColumnPropNameInRow="SubTotal12" msprop:Generator_ColumnPropNameInTable="SubTotal12Column" msprop:Generator_UserColumnName="SubTotal12" type="xs:double" minOccurs="0" />
+              <xs:element name="SubTotalIVA" msprop:Generator_ColumnVarNameInTable="columnSubTotalIVA" msprop:Generator_ColumnPropNameInRow="SubTotalIVA" msprop:Generator_ColumnPropNameInTable="SubTotalIVAColumn" msprop:Generator_UserColumnName="SubTotalIVA" type="xs:double" minOccurs="0" />
+              <xs:element name="Descuento" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" type="xs:double" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:double" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TDetalle_Pedido_Foreign" />
+      <xs:field xpath="mstns:PedidoCod" />
+      <xs:field xpath="mstns:ProductoCod" />
+    </xs:unique>
+    <xs:unique name="TPedido_Foreign_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TPedido_Foreign" />
+      <xs:field xpath="mstns:Codigo" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="TPedido_Foreign_TDetalle_Pedido_Foreign" msdata:parent="TPedido_Foreign" msdata:child="TDetalle_Pedido_Foreign" msdata:parentkey="Codigo" msdata:childkey="PedidoCod" msprop:Generator_UserChildTable="TDetalle_Pedido_Foreign" msprop:Generator_ChildPropName="GetTDetalle_Pedido_ForeignRows" msprop:Generator_UserRelationName="TPedido_Foreign_TDetalle_Pedido_Foreign" msprop:Generator_ParentPropName="TPedido_ForeignRow" msprop:Generator_RelationVarName="relationTPedido_Foreign_TDetalle_Pedido_Foreign" msprop:Generator_UserParentTable="TPedido_Foreign" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

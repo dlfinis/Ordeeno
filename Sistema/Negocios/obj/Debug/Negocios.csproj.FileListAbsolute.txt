@@ -1,0 +1,7 @@
+C:\SisElectro\WinFact\Negocios\bin\Debug\Negocios.dll
+C:\SisElectro\WinFact\Negocios\bin\Debug\Negocios.pdb
+C:\SisElectro\WinFact\Negocios\bin\Debug\Datos.dll
+C:\SisElectro\WinFact\Negocios\bin\Debug\Datos.pdb
+C:\SisElectro\WinFact\Negocios\obj\Debug\Negocios.dll
+C:\SisElectro\WinFact\Negocios\obj\Debug\Negocios.pdb
+C:\SisElectro\WinFact\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache

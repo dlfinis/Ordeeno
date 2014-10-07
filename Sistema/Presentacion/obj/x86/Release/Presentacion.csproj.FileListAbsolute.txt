@@ -1,0 +1,17 @@
+C:\SisElectro\WinFact\Presentacion\bin\Release\Presentacion.exe
+C:\SisElectro\WinFact\Presentacion\bin\Release\Presentacion.pdb
+C:\SisElectro\WinFact\Presentacion\bin\Release\Datos.dll
+C:\SisElectro\WinFact\Presentacion\bin\Release\Negocios.dll
+C:\SisElectro\WinFact\Presentacion\bin\Release\Datos.pdb
+C:\SisElectro\WinFact\Presentacion\bin\Release\Negocios.pdb
+C:\SisElectro\WinFact\Presentacion\obj\x86\Release\Presentacion.csprojResolveAssemblyReference.cache
+C:\SisElectro\WinFact\Presentacion\obj\x86\Release\Presentacion.FormCiudad.resources
+C:\SisElectro\WinFact\Presentacion\obj\x86\Release\Presentacion.FormListarCiudades.resources
+C:\SisElectro\WinFact\Presentacion\obj\x86\Release\Presentacion.Properties.Resources.resources
+C:\SisElectro\WinFact\Presentacion\obj\x86\Release\Presentacion.csproj.GenerateResource.Cache
+C:\SisElectro\WinFact\Presentacion\obj\x86\Release\Presentacion.exe
+C:\SisElectro\WinFact\Presentacion\obj\x86\Release\Presentacion.pdb
+C:\SisElectro\WinFact\Presentacion\obj\x86\Release\Presentacion.FormLogin.resources
+C:\SisElectro\WinFact\Presentacion\obj\x86\Release\Presentacion.FormSplashScreen.resources
+C:\SisElectro\WinFact\Presentacion\obj\x86\Release\Presentacion.Main.resources
+C:\SisElectro\WinFact\Presentacion\obj\x86\Release\Presentacion.FormDataCiudades.resources

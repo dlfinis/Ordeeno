@@ -1,0 +1,16 @@
+C:\SisElectro\WinFact\Negocios\bin\Release\Negocios.dll
+C:\SisElectro\WinFact\Negocios\bin\Release\Negocios.pdb
+C:\SisElectro\WinFact\Negocios\bin\Release\Datos.dll
+C:\SisElectro\WinFact\Negocios\bin\Release\Datos.pdb
+C:\SisElectro\WinFact\Negocios\obj\Release\Negocios.csprojResolveAssemblyReference.cache
+C:\SisElectro\WinFact\Negocios\obj\Release\Negocios.dll
+C:\SisElectro\WinFact\Negocios\obj\Release\Negocios.pdb
+C:\SisElectro\Sistema\Negocios\bin\Release\Negocios.dll
+C:\SisElectro\Sistema\Negocios\bin\Release\Negocios.pdb
+C:\SisElectro\Sistema\Negocios\bin\Release\Datos.dll
+C:\SisElectro\Sistema\Negocios\bin\Release\Datos.pdb
+C:\SisElectro\Sistema\Negocios\obj\Release\Negocios.csprojResolveAssemblyReference.cache
+C:\SisElectro\Sistema\Negocios\obj\Release\Negocios.Base.FormBase.resources
+C:\SisElectro\Sistema\Negocios\obj\Release\Negocios.csproj.GenerateResource.Cache
+C:\SisElectro\Sistema\Negocios\obj\Release\Negocios.dll
+C:\SisElectro\Sistema\Negocios\obj\Release\Negocios.pdb
